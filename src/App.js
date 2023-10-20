@@ -17,17 +17,6 @@ const GET_COURSE_OFFERING = gql`{
   }
 }`;
 
-const STAR_REPOSITORY = gql`
-  mutation($id: ID!) {
-    addStar(input: { starrableId: $id }) {
-      starrable {
-        id
-        viewerHasStarred
-      }
-    }
-  }
-`;
-
 const App = () => (
   <Query query={GET_COURSE_OFFERING}>
     {({ data: { searchCourseOffering }, loading }) => {
